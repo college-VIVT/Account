@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountGUI", "AccountGUI\Ac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountModelData", "AccountModelData\AccountModelData.csproj", "{B2C83460-26AF-4DF3-AE5A-A940228A5DEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{5FC1FB0B-BB0D-4165-AD22-F23B3F1FD678}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B2C83460-26AF-4DF3-AE5A-A940228A5DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2C83460-26AF-4DF3-AE5A-A940228A5DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2C83460-26AF-4DF3-AE5A-A940228A5DEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FC1FB0B-BB0D-4165-AD22-F23B3F1FD678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FC1FB0B-BB0D-4165-AD22-F23B3F1FD678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FC1FB0B-BB0D-4165-AD22-F23B3F1FD678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FC1FB0B-BB0D-4165-AD22-F23B3F1FD678}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
