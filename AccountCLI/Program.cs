@@ -26,9 +26,10 @@ namespace AccountCLI
             var db = new DB();
             db.Error += WriteLine;
             db.Error += log.Error;
+            db.Info += log.Info;
+            db.Success += log.Success;
 
             db.Open();
-            log.Info("Подключение к БД - OK");
 
             if (db.SearchUser(user, password))
             {
@@ -42,8 +43,6 @@ namespace AccountCLI
             }
             
             db.Close();
-
-            log.Info("БД - отключена");
         }
     }
 }
