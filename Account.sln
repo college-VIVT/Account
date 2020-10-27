@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBConnecting", "DBConnectin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateMessage", "DelegateMessage\DelegateMessage.csproj", "{B4A32EAA-1A14-4528-91C1-4BE7D0D4E3D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountCLI", "AccountCLI\AccountCLI.csproj", "{5E8957C7-8675-4CE7-8423-25C277EDE3FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B4A32EAA-1A14-4528-91C1-4BE7D0D4E3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4A32EAA-1A14-4528-91C1-4BE7D0D4E3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4A32EAA-1A14-4528-91C1-4BE7D0D4E3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E8957C7-8675-4CE7-8423-25C277EDE3FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E8957C7-8675-4CE7-8423-25C277EDE3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E8957C7-8675-4CE7-8423-25C277EDE3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E8957C7-8675-4CE7-8423-25C277EDE3FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
