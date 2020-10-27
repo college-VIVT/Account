@@ -3,11 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AccountGUI"
         mc:Ignorable="d"
         Title="Account" Height="450" Width="500">
     <Grid>
-        <TextBlock x:Name="label_Title"
+        <TextBlock x:Name="LabelTitle"
                    Text="Авторизация" TextWrapping="Wrap"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Top"
@@ -16,38 +15,38 @@
                    FontFamily="Bookman Old Style" 
                    Foreground="Red"/>
 
-        <TextBlock x:Name="label_User"
+        <TextBlock x:Name="LabelUser"
                    Text="User" TextWrapping="Wrap"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Margin="50,200,0,0"
                    FontSize="16"/>
-        <TextBox x:Name="input_User"
+        <TextBox x:Name="InputUser"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Margin="130,200,0,0"
                  Width="300" FontSize="16"/>
 
-        <TextBlock x:Name="label_Password"
+        <TextBlock x:Name="LabelPassword"
             Text="Password" TextWrapping="Wrap"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Margin="50,250,0,0"
             FontSize="16"/>
-        <TextBox x:Name="input_Password"
+        <TextBox x:Name="InputPassword"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Margin="130,250,0,0"
             Width="300" FontSize="16"/>
 
-        <Button x:Name="button_LogIn"
+        <Button x:Name="ButtonLogIn"
                 Content="LogIn"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="260,330,0,0"
                 FontSize="16" Width="60"
                 Click="Button_LogIn_OnClick"/>
-        <Button x:Name="button_Cancel"
+        <Button x:Name="ButtonCancel"
                 Content="Cancel"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"

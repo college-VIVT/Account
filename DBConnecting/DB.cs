@@ -4,29 +4,28 @@ using DelegateMessage;
 
 namespace DBConnecting
 {
-    public class DB
+    public class Db
     {
-        private readonly string _connection;
         private readonly MySqlConnection _db;
-        private MySqlCommand _command;
+        private readonly MySqlCommand _command;
 
         public event Message Error;
         public event Message Info;
         public event Message Success;
 
-        public DB()
+        public Db()
         {
-            _connection = "Server=mysql60.hostland.ru;Database=host1323541_vivt2;Uid=host1323541_vivt;Pwd=mhnqw7If;";
-            _db = new MySqlConnection(_connection);
+            const string CONNECTION = "Server=mysql60.hostland.ru;Database=host1323541_vivt2;Uid=host1323541_vivt;Pwd=mhnqw7If;";
+            _db = new MySqlConnection(CONNECTION);
             _command = new MySqlCommand();
             
             Info?.Invoke("Все необходимые классы проинициализированы");
         }
 
-        public DB(string host, string data_base, string user, string password)
+        public Db(string host, string dataBase, string user, string password)
         {
-            _connection = $"Server={host}u;Database={data_base};Uid={user};Pwd={password};";
-            _db = new MySqlConnection(_connection);
+            var connection = $"Server={host}u;Database={dataBase};Uid={user};Pwd={password};";
+            _db = new MySqlConnection(connection);
             _command = new MySqlCommand();
             Info?.Invoke("Все необходимые классы проинициализированы");
         }

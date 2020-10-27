@@ -1,15 +1,13 @@
-﻿using System;
-using Logging;
-using MySql.Data.MySqlClient;
+﻿using Logging;
 using DBConnecting;
 
 using static System.Console;
 
 namespace AccountCLI
 {
-    class Program
+    internal static class Program
     {
-        static void Main()
+        private static void Main()
         {
             var log = new LogToFile();
             log.ShowError += WriteLine;
@@ -23,7 +21,7 @@ namespace AccountCLI
             
             log.Info("Ввод данных пользователя");
             
-            var db = new DB();
+            var db = new Db();
             db.Error += WriteLine;
             db.Error += log.Error;
             db.Info += log.Info;

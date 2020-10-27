@@ -1,28 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
+﻿using System.Windows;
 using Logging;
 using DBConnecting;
-using AccountModelData;
 
 namespace AccountGUI
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
-        private LogToFile _log = new LogToFile();
-        private DB _db = new DB();
+        private readonly LogToFile _log = new LogToFile();
+        private readonly Db _db = new Db();
         public MainWindow()
         {
             _db.Info += _log.Info;
@@ -45,14 +30,14 @@ namespace AccountGUI
         private void Button_Cancel_OnClick(object sender, RoutedEventArgs e)
         {
             _log.Info("Очистка полей ввода текста");
-            input_User.Text = string.Empty;
-            input_Password.Text = string.Empty;
+            InputUser.Text = string.Empty;
+            InputPassword.Text = string.Empty;
         }
 
         private void Button_LogIn_OnClick(object sender, RoutedEventArgs e)
         {
-            var user = input_User.Text;
-            var password = input_Password.Text;
+            var user = InputUser.Text;
+            var password = InputPassword.Text;
             
             _db.Open();
 
