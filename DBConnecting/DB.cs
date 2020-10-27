@@ -41,7 +41,7 @@ namespace DBConnecting
         public bool SearchUser(string user, string password)
         {
             var sql = $"SELECT login FROM table_account WHERE login = '{user}' AND password = '{password}';";
-            if (_db != null) _command.Connection = _db;
+            _command.Connection = _db;
             _command.CommandText = sql;
 
             var result = _command.ExecuteReader();
