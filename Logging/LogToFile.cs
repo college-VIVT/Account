@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Security;
+using DelegateMessage;
 
 namespace Logging
 {
-    public delegate void Message(string message);
-    
     public class LogToFile
     {
         private readonly string _path;
