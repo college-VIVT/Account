@@ -14,6 +14,7 @@
                    FontSize="48" FontWeight="Normal" 
                    FontFamily="Bookman Old Style" 
                    Foreground="Red"/>
+        
         <TextBlock x:Name="LabelUser"
                    Text="User" TextWrapping="Wrap"
                    HorizontalAlignment="Left"
@@ -24,7 +25,8 @@
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Margin="130,130,0,0"
-                 Width="300" FontSize="16"/>
+                 Width="300" FontSize="16"
+                 TextChanged="InputUser_OnTextChanged"/>
 
         <TextBlock x:Name="LabelPassword"
             Text="Password" TextWrapping="Wrap"
@@ -36,7 +38,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Margin="130,170,0,0"
-            Width="300" FontSize="16"/>
+            Width="300" FontSize="16"
+            TextChanged="InputPassword_OnTextChanged"/>
 
         <TextBlock x:Name="LabelName"
             Text="Name" TextWrapping="Wrap"
@@ -48,7 +51,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Margin="130,210,0,0"
-            Width="300" FontSize="16"/>
+            Width="300" FontSize="16"
+            TextChanged="InputName_OnTextChanged"/>
 
         <TextBlock x:Name="LabelEmail"
             Text="Name" TextWrapping="Wrap"
@@ -60,28 +64,30 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Margin="130,250,0,0"
-            Width="300" FontSize="16"/>
+            Width="300" FontSize="16"
+            TextChanged="InputEmail_OnTextChanged"/>
 
-        <Button x:Name="ButtonLogIn"
-                Content="LogIn"
+        <Button x:Name="ButtonRegistration"
+                Content="SignUp"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="350,330,0,0"
                 FontSize="16" Width="60"
-                Click="Button_LogIn_OnClick"/>
+                IsEnabled="False"
+                Click="ButtonRegistration_OnClick"/>
         <Button x:Name="ButtonClear"
                 Content="Button" 
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="240,330,0,0"
-                FontSize="16" Width="60"/>
+                FontSize="16" Width="60"
+                Click="ButtonClear_OnClick"/>
         <Button x:Name="ButtonCancel"
                 Content="Cancel"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="130,330,0,0"
                 FontSize="16" Width="60"
-                Click="Button_Cancel_OnClick"/>
-
+                Click="ButtonCancel_OnClick"/>
     </Grid>
 </Window>
