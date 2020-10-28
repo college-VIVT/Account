@@ -32,11 +32,7 @@ namespace AccountGUI
             var result = MessageBox.Show("Вы действительно хотите закрыть?", "Account", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
-                //TODO Закрыть приложение
-            }
-            else
-            {
-                //TODO Отменить закрытие
+                Close();
             }
         }
 
