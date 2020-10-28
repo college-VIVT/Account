@@ -1,39 +1,62 @@
-﻿<Window x:Class="AccountGUI.MainWindow"
+﻿<Window x:Class="AccountGUI.Registration"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Account" Height="450" Width="500">
+        Title="Account. Registration" Height="450" Width="500">
     <Grid>
         <TextBlock x:Name="LabelTitle"
-                   Text="Авторизация" TextWrapping="Wrap"
+                   Text="Регистрация" TextWrapping="Wrap"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Top"
                    Margin="0,60,0,0" 
                    FontSize="48" FontWeight="Normal" 
                    FontFamily="Bookman Old Style" 
                    Foreground="Red"/>
-
         <TextBlock x:Name="LabelUser"
                    Text="User" TextWrapping="Wrap"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
-                   Margin="50,200,0,0"
+                   Margin="50,130,0,0"
                    FontSize="16"/>
         <TextBox x:Name="InputUser"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
-                 Margin="130,200,0,0"
+                 Margin="130,130,0,0"
                  Width="300" FontSize="16"/>
 
         <TextBlock x:Name="LabelPassword"
             Text="Password" TextWrapping="Wrap"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Margin="50,250,0,0"
+            Margin="50,170,0,0"
             FontSize="16"/>
         <TextBox x:Name="InputPassword"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="130,170,0,0"
+            Width="300" FontSize="16"/>
+
+        <TextBlock x:Name="LabelName"
+            Text="Name" TextWrapping="Wrap"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="50,210,0,0"
+            FontSize="16"/>
+        <TextBox x:Name="InputName"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="130,210,0,0"
+            Width="300" FontSize="16"/>
+
+        <TextBlock x:Name="LabelEmail"
+            Text="Name" TextWrapping="Wrap"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="50,250,0,0"
+            FontSize="16"/>
+        <TextBox x:Name="InputEmail"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Margin="130,250,0,0"
@@ -47,7 +70,7 @@
                 FontSize="16" Width="60"
                 Click="Button_LogIn_OnClick"/>
         <Button x:Name="ButtonClear"
-                Content="Clear" 
+                Content="Button" 
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="240,330,0,0"
@@ -59,12 +82,6 @@
                 Margin="130,330,0,0"
                 FontSize="16" Width="60"
                 Click="Button_Cancel_OnClick"/>
-        
-        <Button x:Name="ButtonRegistration"
-                Content="Регистрация"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="50,380,0,0" 
-                FontSize="16" Width="100"/>        
+
     </Grid>
 </Window>
