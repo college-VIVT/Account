@@ -23,7 +23,7 @@ namespace AccountGUI
             Closing += (sender, args) => _log.Info("Закрытие приложения");
             Closed += (sender, args) =>
             {
-                _log.Info("Приложение закрылось");
+                _log.Info("Закрытие главного окна");
             };
         }
 
@@ -68,6 +68,7 @@ namespace AccountGUI
         {
             var registration = new Registration();
             registration.Show();
+            _log.Info("Открытие окна регистрации пользователя");
             Close();
         }
     }
