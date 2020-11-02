@@ -12,7 +12,8 @@ namespace AccountGUI
 
         private bool isTextUser = false;
         private bool isTextPassword = false;
-        private bool isTextName = false;
+        private bool isTextFirstName = false;
+        private bool isTextLastName = false;
         private bool isTextEmail = false;
         
         public Registration()
@@ -22,7 +23,12 @@ namespace AccountGUI
 
         private void ButtonRegistration_OnClick(object sender, RoutedEventArgs e)
         {
-            //TODO Отправка запроса на добавление данных в БД
+            //TODO Проверка пароля на соответствие требованиям
+            //TODO Проверка логина в БД
+            
+            _db.Open();
+            _db.InputUser("user_test", "1", "A", "S", "e");
+
         }
 
         private void ButtonClear_OnClick(object sender, RoutedEventArgs e)
@@ -43,48 +49,48 @@ namespace AccountGUI
 
         private void EnableButton()
         {
-            if (isTextUser && isTextPassword && isTextName && isTextEmail)
+            if (isTextUser && isTextPassword && isTextFirstName && isTextLastName && isTextEmail)
             {
                 ButtonRegistration.IsEnabled = true;
+            }
+            else
+            {
+                ButtonRegistration.IsEnabled = false;
             }
         }
 
         private void InputUser_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            if (InputUser.Text != "")
-            {
-                isTextUser = true;
-            }
+            isTextUser = InputUser.Text != "";
 
             EnableButton();
         }
 
         private void InputPassword_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            if (InputPassword.Text != "")
-            {
-                isTextPassword = true;
-            }
+            isTextPassword = InputPassword.Text != "";
             
             EnableButton();
         }
 
-        private void InputName_OnTextChanged(object sender, TextChangedEventArgs e)
+        private void InputFirstName_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            if (InputName.Text != "")
-            {
-                isTextName = true;
-            }
+            isTextFirstName = InputFirstName.Text != "";
+            
+            EnableButton();
+        }
+        
+        private void InputLastName_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            isTextLastName = InputLastName.Text != "";
             
             EnableButton();
         }
 
         private void InputEmail_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            if (InputEmail.Text != "")
-            {
-                isTextEmail = true;
-            }
+            isTextEmail = InputEmail.Text != "";
             
             EnableButton();
         }

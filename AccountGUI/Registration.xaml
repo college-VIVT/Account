@@ -41,29 +41,42 @@
             Width="300" FontSize="16"
             TextChanged="InputPassword_OnTextChanged"/>
 
-        <TextBlock x:Name="LabelName"
-            Text="Name" TextWrapping="Wrap"
+        <TextBlock x:Name="LabelFirstName"
+            Text="First name" TextWrapping="Wrap"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Margin="50,210,0,0"
             FontSize="16"/>
-        <TextBox x:Name="InputName"
+        <TextBox x:Name="InputFirstName"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Margin="130,210,0,0"
             Width="300" FontSize="16"
-            TextChanged="InputName_OnTextChanged"/>
+            TextChanged="InputFirstName_OnTextChanged"/>
+        
+        <TextBlock x:Name="LabelLastName"
+                   Text="Last name" TextWrapping="Wrap"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="50,250,0,0"
+                   FontSize="16"/>
+        <TextBox x:Name="InputLastName"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="130,250,0,0"
+                 Width="300" FontSize="16"
+                 TextChanged="InputLastName_OnTextChanged"/>
 
         <TextBlock x:Name="LabelEmail"
-            Text="Name" TextWrapping="Wrap"
+            Text="Email" TextWrapping="Wrap"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Margin="50,250,0,0"
+            Margin="50,280,0,0"
             FontSize="16"/>
         <TextBox x:Name="InputEmail"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Margin="130,250,0,0"
+            Margin="130,280,0,0"
             Width="300" FontSize="16"
             TextChanged="InputEmail_OnTextChanged"/>
 
