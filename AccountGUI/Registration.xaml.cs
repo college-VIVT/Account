@@ -140,7 +140,6 @@ namespace AccountGUI
         
         private void InputLastName_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-
             _isTextLastName = InputLastName.Text != "";
             
             EnableButton();
