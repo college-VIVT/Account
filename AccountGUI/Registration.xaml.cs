@@ -1,7 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using Logging;
 using DBConnecting;
+using PasswordCheck = PasswordCheck.PasswordCheck;
 
 namespace AccountGUI
 {
@@ -10,11 +12,12 @@ namespace AccountGUI
         private readonly LogToFile _log = new LogToFile();
         private readonly Db _db = new Db();
 
-        private bool isTextUser = false;
-        private bool isTextPassword = false;
-        private bool isTextFirstName = false;
-        private bool isTextLastName = false;
-        private bool isTextEmail = false;
+        private bool _isTextUser = false;
+        private bool _isTextPassword = false;
+        private bool _isTextFirstName = false;
+        private bool _isTextLastName = false;
+        private bool _isTextEmail = false;
+        private bool _isCheckPassword = false;
         
         public Registration()
         {
@@ -37,7 +40,6 @@ namespace AccountGUI
 
         private void ButtonRegistration_OnClick(object sender, RoutedEventArgs e)
         {
-            //TODO Проверка пароля на соответствие требованиям
             //TODO Проверка логина в БД
             
             _db.Open();
@@ -73,7 +75,7 @@ namespace AccountGUI
 
         private void EnableButton()
         {
-            if (isTextUser && isTextPassword && isTextFirstName && isTextLastName && isTextEmail)
+            if (_isTextUser && _isTextPassword && _isTextFirstName && _isTextLastName && _isTextEmail && _isCheckPassword)
             {
                 ButtonRegistration.IsEnabled = true;
             }
@@ -85,21 +87,38 @@ namespace AccountGUI
 
         private void InputUser_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            isTextUser = InputUser.Text != "";
+            _isTextUser = InputUser.Text != "";
 
             EnableButton();
         }
 
         private void InputPassword_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            isTextPassword = InputPassword.Text != "";
+            if (InputPassword.Text == "")
+            {
+                _isCheckPassword = false;
+                _isTextPassword = false;
+            }
+            else
+            {
+                _isTextPassword = true;
+                var password = InputPassword.Text;
+                if (IsCheckLengt(password) && IsCheckSymbol(password) && IsCheckAlphabet(password))
+                {
+                    _isCheckPassword = true;
+                }
+                else
+                {
+                    _isCheckPassword = false;
+                }
+            }
             
             EnableButton();
         }
 
         private void InputFirstName_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            isTextFirstName = InputFirstName.Text != "";
+            _isTextFirstName = InputFirstName.Text != "";
             
             EnableButton();
         }
@@ -107,16 +126,69 @@ namespace AccountGUI
         private void InputLastName_OnTextChanged(object sender, TextChangedEventArgs e)
         {
 
-            isTextLastName = InputLastName.Text != "";
+            _isTextLastName = InputLastName.Text != "";
             
             EnableButton();
         }
 
         private void InputEmail_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            isTextEmail = InputEmail.Text != "";
+            _isTextEmail = InputEmail.Text != "";
             
             EnableButton();
+        }
+
+        private bool IsCheckLengt(string password)
+        {
+            var passwordCheck = new global::PasswordCheck.PasswordCheck();
+
+            if (passwordCheck.CheckLength(password))
+            {
+                LabelPasswordCheckLength.Foreground = Brushes.Green;
+                LabelPasswordCheckLength.Text = "Длина пароля подходящая";
+                return true;
+            }
+            else
+            {
+                LabelPasswordCheckLength.Foreground = Brushes.Red;
+                LabelPasswordCheckLength.Text = "Длина пароля меньше требуемой";
+                return false;
+            }
+        }
+        
+        private bool IsCheckSymbol(string password)
+        {
+            var passwordCheck = new global::PasswordCheck.PasswordCheck();
+
+            if (passwordCheck.CheckSymbol(password))
+            {
+                LabelPasswordCheckSymbol.Foreground = Brushes.Green;
+                LabelPasswordCheckSymbol.Text = "Пароль соответствует минимальным требованиям";
+                return true;
+            }
+            else
+            {
+                LabelPasswordCheckSymbol.Foreground = Brushes.Red;
+                LabelPasswordCheckSymbol.Text = "Пароль не соответствует минимальным требованиям";
+                return false;
+            }
+        }
+        private bool IsCheckAlphabet(string password)
+        {
+            var passwordCheck = new global::PasswordCheck.PasswordCheck();
+
+            if (passwordCheck.CheckAlphabet(password))
+            {
+                LabelPasswordCheckAlphabet.Foreground = Brushes.Green;
+                LabelPasswordCheckAlphabet.Text = "Пароль содержит только допустимые символы";
+                return true;
+            }
+            else
+            {
+                LabelPasswordCheckAlphabet.Foreground = Brushes.Red;
+                LabelPasswordCheckAlphabet.Text = "Пароль содержит недопустимые символы";
+                return false;
+            }
         }
     }
 }

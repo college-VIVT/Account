@@ -14,7 +14,7 @@
                    FontSize="48" FontWeight="Normal" 
                    FontFamily="Bookman Old Style" 
                    Foreground="Red"/>
-        
+
         <TextBlock x:Name="LabelUser"
                    Text="User" TextWrapping="Wrap"
                    HorizontalAlignment="Left"
@@ -29,62 +29,78 @@
                  TextChanged="InputUser_OnTextChanged"/>
 
         <TextBlock x:Name="LabelPassword"
-            Text="Password" TextWrapping="Wrap"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Margin="50,170,0,0"
-            FontSize="16"/>
+                   Text="Password" TextWrapping="Wrap"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="50,170,0,0"
+                   FontSize="16"/>
         <TextBox x:Name="InputPassword"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Margin="130,170,0,0"
-            Width="300" FontSize="16"
-            TextChanged="InputPassword_OnTextChanged"/>
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="130,170,0,0"
+                 Width="300" FontSize="16"
+                 TextChanged="InputPassword_OnTextChanged"/>
+
+        <TextBlock x:Name="LabelPasswordCheckLength"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="130,200,0,0"
+                   Width="300"/>
+        <TextBlock x:Name="LabelPasswordCheckSymbol"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="130,215,0,0"
+                   Width="300"/>
+        <TextBlock x:Name="LabelPasswordCheckAlphabet"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="130,230,0,0"
+                   Width="300"/>
 
         <TextBlock x:Name="LabelFirstName"
-            Text="First name" TextWrapping="Wrap"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Margin="50,210,0,0"
-            FontSize="16"/>
+                   Text="First name" TextWrapping="Wrap"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="50,260,0,0"
+                   FontSize="16"/>
         <TextBox x:Name="InputFirstName"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Margin="130,210,0,0"
-            Width="300" FontSize="16"
-            TextChanged="InputFirstName_OnTextChanged"/>
-        
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="130,260,0,0"
+                 Width="300" FontSize="16"
+                 TextChanged="InputFirstName_OnTextChanged"/>
+
         <TextBlock x:Name="LabelLastName"
                    Text="Last name" TextWrapping="Wrap"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
-                   Margin="50,250,0,0"
+                   Margin="50,300,0,0"
                    FontSize="16"/>
         <TextBox x:Name="InputLastName"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
-                 Margin="130,250,0,0"
+                 Margin="130,300,0,0"
                  Width="300" FontSize="16"
                  TextChanged="InputLastName_OnTextChanged"/>
 
         <TextBlock x:Name="LabelEmail"
-            Text="Email" TextWrapping="Wrap"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Margin="50,280,0,0"
-            FontSize="16"/>
+                   Text="Email" TextWrapping="Wrap"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="50,330,0,0"
+                   FontSize="16"/>
         <TextBox x:Name="InputEmail"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Margin="130,280,0,0"
-            Width="300" FontSize="16"
-            TextChanged="InputEmail_OnTextChanged"/>
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="130,330,0,0"
+                 Width="300" FontSize="16"
+                 TextChanged="InputEmail_OnTextChanged"/>
 
         <Button x:Name="ButtonRegistration"
                 Content="SignUp"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Margin="350,330,0,0"
+                Margin="350,380,0,0"
                 FontSize="16" Width="60"
                 IsEnabled="False"
                 Click="ButtonRegistration_OnClick"/>
@@ -92,14 +108,14 @@
                 Content="Button" 
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Margin="240,330,0,0"
+                Margin="240,380,0,0"
                 FontSize="16" Width="60"
                 Click="ButtonClear_OnClick"/>
         <Button x:Name="ButtonCancel"
                 Content="Cancel"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Margin="130,330,0,0"
+                Margin="130,380,0,0"
                 FontSize="16" Width="60"
                 Click="ButtonCancel_OnClick"/>
     </Grid>
