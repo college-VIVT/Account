@@ -43,15 +43,30 @@
                 Content="LogIn"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Margin="260,330,0,0"
+                Margin="350,330,0,0"
                 FontSize="16" Width="60"
                 Click="Button_LogIn_OnClick"/>
+        <Button x:Name="ButtonClear"
+                Content="Clear" 
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="240,330,0,0"
+                FontSize="16" Width="60"
+                Click="ButtonClear_OnClick"/>
         <Button x:Name="ButtonCancel"
                 Content="Cancel"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Margin="160,330,0,0"
+                Margin="130,330,0,0"
                 FontSize="16" Width="60"
                 Click="Button_Cancel_OnClick"/>
+        
+        <Button x:Name="ButtonRegistration"
+                Content="Регистрация"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="50,380,0,0" 
+                FontSize="16" Width="100"
+                Click="ButtonRegistration_OnClick"/>        
     </Grid>
 </Window>

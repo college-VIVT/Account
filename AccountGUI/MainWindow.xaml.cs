@@ -23,15 +23,17 @@ namespace AccountGUI
             Closing += (sender, args) => _log.Info("Закрытие приложения");
             Closed += (sender, args) =>
             {
-                _log.Info("Приложение закрылось");
+                _log.Info("Закрытие главного окна");
             };
         }
 
         private void Button_Cancel_OnClick(object sender, RoutedEventArgs e)
         {
-            _log.Info("Очистка полей ввода текста");
-            InputUser.Text = string.Empty;
-            InputPassword.Text = string.Empty;
+            var result = MessageBox.Show("Вы действительно хотите закрыть?", "Account", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                Close();
+            }
         }
 
         private void Button_LogIn_OnClick(object sender, RoutedEventArgs e)
@@ -53,6 +55,21 @@ namespace AccountGUI
             }
             
             _db.Close();
+        }
+
+        private void ButtonClear_OnClick(object sender, RoutedEventArgs e)
+        {
+            _log.Info("Очистка полей ввода текста");
+            InputUser.Text = string.Empty;
+            InputPassword.Text = string.Empty;
+        }
+
+        private void ButtonRegistration_OnClick(object sender, RoutedEventArgs e)
+        {
+            var registration = new Registration();
+            registration.Show();
+            _log.Info("Открытие окна регистрации пользователя");
+            Close();
         }
     }
 }

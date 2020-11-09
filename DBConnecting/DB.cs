@@ -50,10 +50,9 @@ namespace DBConnecting
             _command.CommandText = sql;
             Info?.Invoke("Запрос в БД на поиск пользователя готов");
 
-            MySqlDataReader result;
             try
             {
-                result = _command.ExecuteReader();
+                var result = _command.ExecuteReader();
                 return result.Read();
             }
             catch (Exception e)
@@ -61,6 +60,63 @@ namespace DBConnecting
                 Error?.Invoke(e.Message);
                 throw;
             }
+        }
+
+        public bool CheckUser(string user)
+        {
+            var sql = $"SELECT login FROM table_account WHERE login = '{user}';";
+            _command.Connection = _db;
+            _command.CommandText = sql;
+            Info?.Invoke("Запрос в БД на поиск пользователя готов");
+
+            try
+            {
+                var result = _command.ExecuteReader();
+                return result.Read();
+            }
+            catch (Exception e)
+            {
+                Error?.Invoke(e.Message);
+                throw;
+            }
+        }
+
+        public bool InputUser(string login, string password, string firstName, string lastName, string email)
+        {
+            var sql = $"INSERT INTO table_account (login, password) VALUES ('{login}', '{password}');";
+            _command.Connection = _db;
+            _command.CommandText = sql;
+            
+            Info?.Invoke("Запрос в БД на добавление пользователя готов");
+            
+            var result = _command.ExecuteNonQuery();
+
+            if (result == 0)
+            {
+                Error?.Invoke("Ошибка записи в table_account");
+                return false;
+            }
+            else
+            {
+                sql = $"INSERT INTO table_user (first_name, last_name, email) VALUES ('{firstName}', '{lastName}', '{email}');";
+                _command.CommandText = sql;
+                
+                Info?.Invoke("Запрос в БД на добавление пользователя готов");
+
+                var res = _command.ExecuteNonQuery();
+
+                if (res == 0)
+                {
+                    Error?.Invoke("Ошибка записи в table_user");
+                    return false;
+                }
+                else
+                {
+                    Success?.Invoke("Добавление новогопользователя прошло успешно");
+                    return true;
+                }
+            }
+            
         }
 
         public void Close()
