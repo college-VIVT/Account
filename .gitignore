@@ -353,3 +353,8 @@ MigrationBackup/
 ## Ignore JetBrains IDE
 ##
 .idea/
+
+##
+## Visual Studio Code
+##
+.vs/
