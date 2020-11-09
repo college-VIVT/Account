@@ -115,8 +115,7 @@ namespace DBConnecting
                     Success?.Invoke("Добавление новогопользователя прошло успешно");
                     return true;
                 }
-            }
-            
+            }            
         }
 
         public void Close()
