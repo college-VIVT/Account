@@ -40,20 +40,35 @@ namespace AccountGUI
 
         private void ButtonRegistration_OnClick(object sender, RoutedEventArgs e)
         {
-            //TODO Проверка логина в БД
+            var user = InputUser.Text;
+            var password = InputPassword.Text;
+            var firstName = InputFirstName.Text;
+            var lastName = InputLastName.Text;
+            var email = InputEmail.Text;
             
             _db.Open();
+            var searchUser = _db.CheckUser(user);
+            _db.Close();
             
-            var isInputUser = _db.InputUser("user_test", "1", "A", "S", "e");
-            if (isInputUser)
+            if (searchUser)
             {
-                _log.Success("Пользователь успешно зарегистрирован");
-                MessageBox.Show("Пользователь успешно зарегистрирован", "Account", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show($"Пользователь {user} уже существует!", "Account", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                _log.Error("Пользователь не зарегистрирован");
-                MessageBox.Show("Пользователь не зарегистрирован", "Account", MessageBoxButton.OK, MessageBoxImage.Error);
+                _db.Open();
+                var isInputUser = _db.InputUser(user, password, firstName, lastName, email);
+                _db.Close();
+                if (isInputUser)
+                {
+                    _log.Success("Пользователь успешно зарегистрирован");
+                    MessageBox.Show("Пользователь успешно зарегистрирован", "Account", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    _log.Error("Пользователь не зарегистрирован");
+                    MessageBox.Show("Пользователь не зарегистрирован", "Account", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 

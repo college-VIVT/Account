@@ -50,10 +50,28 @@ namespace DBConnecting
             _command.CommandText = sql;
             Info?.Invoke("Запрос в БД на поиск пользователя готов");
 
-            MySqlDataReader result;
             try
             {
-                result = _command.ExecuteReader();
+                var result = _command.ExecuteReader();
+                return result.Read();
+            }
+            catch (Exception e)
+            {
+                Error?.Invoke(e.Message);
+                throw;
+            }
+        }
+
+        public bool CheckUser(string user)
+        {
+            var sql = $"SELECT login FROM table_account WHERE login = '{user}';";
+            _command.Connection = _db;
+            _command.CommandText = sql;
+            Info?.Invoke("Запрос в БД на поиск пользователя готов");
+
+            try
+            {
+                var result = _command.ExecuteReader();
                 return result.Read();
             }
             catch (Exception e)
